@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0px;
+        }
+        .item{
+            background-color: aqua;
+            border: 1px solid green;
+            padding: 50px;
+        }
+        .container{
+            display: grid;
+            height: 100vh;
+            text-transform: uppercase;
+            gap:5px;
+            background-color: blue;
+            grid-template-rows: 0.2fr 1fr 1fr 0.2fr; 
+            grid:100px;
+            text-align: center;
+            grid-template-areas: 
+            'nav nav nav nav'
+            'box1 box2 box3 sidebar'
+            'section section section sidebar'
+            'footer footer footer footer'
+        }
+        nav{grid-area: nav;}
+        #box1{grid-area: box1;}
+        #box2{grid-area: box2;}
+        #box3{grid-area: box3;}
+        #sidebar{grid-area: sidebar;}
+        #section{grid-area: section;}
+        footer{grid-area: footer;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="item">navbar</nav>
+        <div id="box1" class="item">Box 1</div>
+        <div id="box2"  class="item">Box 2</div>
+        <div id="box3"  class="item"> Box 3</div>
+        <div id="sidebar" class="item">sidebar</div>
+        <div id="section"  class="item">Section</div>
+        <footer  class="item">Footer</footer>
+    </div>
+</body>
+</html>

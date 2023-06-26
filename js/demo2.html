@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Test Game</h3>
+    <p id="demo"></p>
+    <script>
+        var play = confirm("Do you want to continue...");
+        if(play){
+            document.getElementById("demo").innerHTML = "Continue....";
+        }else{
+            document.getElementById("demo").innerHTML = "Your Score was 86";
+        }
+    </script>
+</body>
+</html>

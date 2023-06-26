@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        *{
+            margin: 0px;
+        }
+        body{
+            background-color:aliceblue;
+            min-height: 100vh;
+            color:aliceblue;
+            font-family: Tahoma;
+        }
+        .container{
+            display: grid;
+            grid:100px;
+            grid-template-areas: 
+            'navbar'
+            'main'
+            'footer'
+        }
+        .searchbar{
+            height: 40px;
+            padding: 10px;
+            background-color: #0F1111;
+            display: grid;
+            grid-template-columns: 1.2fr 1.2fr 5fr 0.7fr 1fr .8fr 0.5fr;
+        }
+
+        nav .logoDiv{
+            padding-left: 8px;
+            padding-top: 8px;
+        }
+        .menuDiv{
+            height: 100%;
+            font-size: 13px;
+        }
+        .mapico{
+            padding:4px;
+            margin-top:5px;
+            font-size: 8px;
+        }
+        .logoDiv span{
+            line-height: 22px;
+        }
+        .menubar{
+            height: 40px;
+        }
+        nav{grid-area:navbar;background-color:#232f3e}
+        .main{grid-area:main;height: 400px;}
+        footer{grid-area:footer;font-size: 13px;}
+
+        .backtotop{
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background-color:#37475a
+        }
+        .quicklinks,.countryLng{
+            background-color: #232F3E;
+            /* border: 1px solid red; */
+        }
+        .footerNote,.otherLinks{
+            background-color: #131A22;
+        }
+        .otherLinks{
+            display: grid;
+            padding: 20px 120px 20px 120px;
+            color:#b8b8b8 ;
+            grid-template-areas: 
+            'box1 box2 box3 box4 box5'
+            'box6 box7 box8 box9 box9';
+        }
+        .otherLinks .listHeading{
+            color: aliceblue;
+        }
+        .otherLinks div{
+            padding:20px;
+        }
+        .box1{grid-area: box1;}
+        .box2{grid-area: box2;}
+        .box3{grid-area: box3;}
+        .box4{grid-area: box4;}
+        .box5{grid-area: box5;}
+        .box6{grid-area: box6;}
+        .box7{grid-area: box7;}
+        .box8{grid-area: box8;}
+        .box9{grid-area: box9;}
+        .box10{grid-area: box10;}
+        .footerNote{
+            padding-bottom: 19px;
+            height: 50px;
+            text-align: center;
+            font-size: 13px;
+        }
+        ul{
+            list-style: none;
+            
+        }
+        .footerNote ul li{
+            display: inline;
+            padding-right: 15px;
+        }
+        hr{
+            border: none;
+            height: 1px;
+            background-color: rgb(87, 87, 87);  /* Modern Browsers */
+        }
+        .countryLng{
+            text-align: center;
+            padding: 0px 225px 25px 225px;
+            word-wrap: break-word;
+            font-size: 13px;
+        }
+        .countryLng ul li{
+            display: inline;
+            padding: 3px;
+        }
+        .cntrybox{
+            margin: auto 0px;
+            display:flex;
+        }
+        .cntrybox span select{
+            /* float: left; */
+            /* margin-top:-110px; */
+            height: 30px;
+            line-height: 30px;
+            border-radius: 3px;
+            background-color: transparent;
+            color: inherit;
+            font-size: 13px;
+            padding: 5px;
+        }
+        .cntrybox img{
+            height: 30px;
+        }
+        .logobox,.lngbox{
+            width: 50%;
+            padding: 25px;
+        }
+        .fl{float: left;}
+        .fr{float: right;}
+        .text-center{text-align: center;}
+        .text-left{text-align: left;}
+        .text-right{text-align: right;}
+        .quicklinks{
+            display: grid;
+            padding: 50px;
+            font-size: 13px;
+            grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 0.5fr;
+        }
+        .quicklinks .quicklinkBox ul li{ 
+            line-height: 25px;
+        }
+        .searchDiv{
+            padding: 0px 0px 0px 10px;   
+            font-size: 13px;
+            display: grid;
+            grid-template-columns: 0.15fr 1fr 0.1fr;
+        }
+        .searchDiv .dropdown{
+            /* line-height: 30px; */
+            text-align: center;
+        }
+        .searchDiv .dropdown select{
+            height: 40px;
+            width: 100%;
+            font-size: 13px;
+            padding-left: 5px;
+            background-color: #f3f3f3;
+            border-radius: 5px 0px 0px 5px;
+        }
+        .searchBox input{
+            height: 26px;
+            width: 100%;
+            padding: 5px;
+            font-size: 13px;
+        }
+        .searchDiv .searchIcon{
+            height: 38px;
+            width: 100%;
+            margin-top: 1px;
+            background-color:#febd69;
+            border-radius: 0px 5px 5px 0px;
+        }
+        .langBox{
+            text-align: center;
+            margin-top: 15px;
+        }
+        .langBox select{
+            background-color: transparent;
+            color: #f3f3f3;
+            border: none;
+            font-weight: bold;
+        }
+        .menubar{
+            line-height: 40px;
+            font-size: 14px;
+        }
+        .menubar ul{
+            list-style-type: none;
+        }
+        .menubar ul li{
+            display: inline;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="searchbar">
+                <div class="menuDiv logoDiv">
+                    <div class="logo fl"><img src="./img/logo.png" style="height: 35px;"></div>
+                    <div class="logoDomain fl"><span>.in</span></div>
+                </div>
+                <div class="menuDiv">
+                    <div class="mapico fl"><i class="fa fa-2x fa-map-marker"></i></div>
+                    <div class="selectAddrBox">
+                        <small>Hello</small><br>
+                        <h4>Select Your address</h4>
+                    </div>
+                </div>
+                <div class="menuDiv searchDiv">
+                    <div class="dropdown">
+                        <select name="" id="">
+                            <option>All</option>
+                        </select>
+                    </div>
+                    <div class="searchBox"><input type="text" placeholder="Search Amazon.in"></div>
+                    <div class="searchIcon">
+
+                    </div>
+                </div>
+                <div class="menuDiv langBox">
+                    <select>
+                        <option>EN</option>
+                    </select>
+                </div>
+                <div class="menuDiv">
+                    <!-- <div class="mapico fl"><i class="fa fa-2x fa-map-marker"></i></div> -->
+                    <div class="selectAddrBox">
+                        <small>Hello, sign in</small><br>
+                        <h4>Accounts & Lists</h4>
+                    </div>
+                </div>
+                <div class="menuDiv">
+                    <small>Returns</small>
+                    <h4>& Orders</h4>
+                </div>
+                <div class="menuDiv">
+                    <i class="fa fa-shopping-cart fa-3x"></i><span>Cart</span>
+                </div>
+            </div>
+            <div class="menubar">
+                <ul>
+                    <li>All</li>
+                    <li>Amazon miniTV</li>
+                    <li>Sell</li>
+                    <li>Best Sellers</li>
+                    <li>Mobiles</li>
+                    <li>Today's Deals</li>
+                    <li>Customer Service</li>
+                    <li>New Releases</li>
+                    <li>Electronics</li>
+                    <li>Prime &#8964;</li>
+                </ul>
+            </div>
+        </nav>
+        <section class="main">
+            main
+        </section>
+        <footer>
+            <div class="backtotop">
+                <a>Back To Top</a>
+            </div>
+            <div class="quicklinks">
+                <div class="quicklinkBox"></div>
+                <div class="quicklinkBox">
+                    
+                    <ul>
+                        <li><h3>Get to Know Us</h3></li>
+                        <li>About Us</li>
+                        <li>Careers</li>
+                        <li>Press Releases</li>
+                        <li>Amazon Science</li>
+                    </ul>
+                </div>
+                <div class="quicklinkBox">
+                    <ul>
+                        <li><h3>Connect with Us</h3></li>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                    </ul>
+                </div>
+                <div class="quicklinkBox">
+                    <ul>
+                        <li><h3>Make Money with Us</h3></li>
+                        <li>Sell on Amazon</li>
+                        <li>Sell under Amazon Accelerator</li>
+                        <li>Protect and Build Your Brand</li>
+                        <li>Amazon Global Selling</li>
+                        <li>Become an Affiliate</li>
+                        <li>Fulfilment by Amazon</li>
+                        <li>Advertise Your Products</li>
+                        <li>Amazon Pay on Merchants</li>
+                    </ul>
+                </div>
+                <div class="quicklinkBox">
+                    <ul>
+                        <li><h3>Let Us Help You</h3></li>
+                        <li>COVID-19 and Amazon</li>
+                        <li>Your Account</li>
+                        <li>Returns Centre</li>
+                        <li>100% Purchase Protection</li>
+                        <li>Amazon App Download</li>
+                        <li>Help</li>
+                    </ul>
+                </div>
+                <div class="quicklinkBox"></div>
+            </div>
+            <hr>
+            <div class="countryLng">
+                <div class="cntrybox">
+                    <div class="logobox fl text-right"><img src="./img/logo.png" alt="Amazon Logo"></div>
+                    <div class="lngbox fr text-left">
+
+                        <span>
+                            <select name="lang" id="lang">
+                                <option> 🌎 English</option>
+                            </select>
+                        </span>
+                    </div>
+                    
+                    
+                </div>
+                <ul>
+                    <li>Australia</li>
+                    <li>Brazil</li>
+                    <li>Canada</li>
+                    <li>China</li>
+                    <li>France</li>
+                    <li>Germany</li>
+                    <li>Italy</li>
+                    <li>Japan</li>
+                    <li>Mexico</li>
+                    <li>Netherlands</li>
+                    <li>Poland</li>
+                    <li>Singapore</li>
+                    <li>Spain</li>
+                    <li>Turkey</li>
+                    <li>United Arab Emirates</li>
+                    <li>United Kingdom</li>
+                    <li>United States</li>
+                </ul>
+            </div>
+            <div class="otherLinks">
+                <div class="box box1">
+                    <ul>
+                        <li class="listHeading">AbeBooks</li>
+                        <li>Books,art</li>
+                        <li>& Collectibles</li>
+                    </ul>
+                </div>
+                <div class="box box2">
+                    <ul>
+                        <li class="listHeading">Amazon Web Services</li>
+                        <li>Scalable Cloud</li>
+                        <li>Computing Services</li>
+                    </ul>
+                </div>
+                <div class="box box3">
+                    <ul>
+                        <li class="listHeading">Audible</li>
+                        <li>Download</li>
+                        <li>Audio Books</li>
+                    </ul>
+                </div>
+                <div class="box box4">
+                    <ul>
+                        <li class="listHeading">DPReview</li>
+                        <li>Digital</li>
+                        <li>Photography</li>
+                    </ul>
+                </div>
+                <div class="box box5">
+                    <ul>
+                        <li class="listHeading">IMDb</li>
+                        <li>Movies, TV</li>
+                        <li>& Celebrities</li>
+                    </ul>
+                </div>
+                <div class="box box6">
+                    <ul>
+                        <li class="listHeading">Shopbop</li>
+                        <li>Designer</li>
+                        <li>Fashion Brands</li>
+                    </ul>
+                </div>
+                <div class="box box7">
+                    <ul>
+                        <li class="listHeading">Amazon Business</li>
+                        <li>Everything For</li>
+                        <li>Your Business</li>
+                    </ul>
+                </div>
+                <div class="box box8">
+                    <ul>
+                        <li class="listHeading">Prime Now</li>
+                        <li>2-Hour Delivery</li>
+                        <li>on Everyday Items</li>
+                    </ul>
+                </div>
+                <div class="box box9">
+                    <ul>
+                        <li class="listHeading">Amazon Prime Music</li>
+                        <li>100 million songs, ad-free</li>
+                        <li>Over 15 million podcast episodes</li>
+                    </ul>
+                </div>
+                
+            </div>
+            <div class="footerNote">
+                <ul>
+                    <li>Conditions of Use & Sale</li>
+                    <li>Privacy Notice</li>
+                    <li>Interest-Based Ads</li>
+                </ul>
+                <p>© 1996-2023, Amazon.com, Inc. or its affiliates</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

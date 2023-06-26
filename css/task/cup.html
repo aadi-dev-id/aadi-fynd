@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUP</title>
+    <style>
+        body{
+            margin:0;
+        }
+        .main{
+            height: 100vh;
+            background-color: aqua;
+            display: flex;
+            flex-wrap: row;
+            justify-content: center;
+            align-items: center;
+        }
+        :where(.top,.handle,.bottom){
+            background-color: aliceblue;
+        }
+        .top{
+            height: 150px;
+            width: 250px;
+            border-radius: 0px 0px 100px 100px;
+            text-align: center;
+            line-height: 80px;
+        }
+        .topHandle{
+            display: flex;
+            flex-wrap: row; 
+        }
+        .handle{
+            margin-left: -5px;
+            height: 75px;
+            width: 50px;
+            display: flex;
+            flex-wrap: row;
+            align-items: center;
+            border-radius: 0px 35px 35px 0px;
+        }
+        .circle{
+            height: 55px;
+            width: 40px;
+            border-radius: 0px 35px 35px 0px;
+            background-color: aqua;
+        }
+        .bottom{
+            height: 15px;
+            width: 250px;
+            border-radius: 0px 0px 20px 20px;
+            box-shadow: 0px 2px 0px grey;
+        }
+        .vapour{
+            display: flex;
+            flex-wrap: row;
+            justify-content: center;
+            align-items: end;
+            height: 200px;
+            width: 245px;
+        }
+        .fog{
+            /* margin-left: 10px; */
+            height: 30px;
+            width: 30px;
+            border: 1px solid chartreuse;
+            border-radius: 50%;
+            background-color: #fff;
+            opacity: 0.0;
+        }
+        .anim1{
+            animation: fog 3s infinite;
+            animation-delay: 1s;
+        }
+        .anim2{
+            animation: fog2 3s infinite;
+            animation-delay: 2s;
+        }
+        .anim3{
+            animation: fog3 3s infinite;
+            animation-delay: 3s;
+        }
+        @keyframes fog{
+            0%{margin-left:0px;margin-bottom:0px;opacity: 0.7;width: 30px;height: 30px;}
+            25%{margin-left:15px;margin-bottom:20px;opacity: 0.6;width: 25px;height: 25px;}
+            50%{margin-left:0px;margin-bottom:40px;opacity: 0.5;width: 20px;height: 20px;}
+            75%{margin-left:15px;margin-bottom:60px;opacity: 0.3;width: 15px;height: 15px;}
+            100%{margin-left:0px;margin-bottom:80px;opacity: 0.1;;width: 10px;height: 10px}
+        }
+        @keyframes fog2{
+            0%{margin-left:-15px;margin-bottom:0px;opacity: 0.7;width: 30px;height: 30px;}
+            25%{margin-left:0px;margin-bottom:20px;opacity: 0.6;width: 25px;height: 25px;}
+            50%{margin-left:-15px;margin-bottom:40px;opacity: 0.5;width: 20px;height: 20px;}
+            75%{margin-left:0px;margin-bottom:60px;opacity: 0.3;width: 15px;height: 15px;}
+            100%{margin-left:-15px;margin-bottom:80px;opacity: 0.1;width: 10px;height: 10px;}
+        }
+        @keyframes fog3{
+            0%{margin-left:-15px;margin-bottom:0px;opacity: 0.7;width: 30px;height: 30px;}
+            25%{margin-left:0px;margin-bottom:20px;opacity: 0.6;width: 25px;height: 25px;}
+            50%{margin-left:-15px;margin-bottom:40px;opacity: 0.5;width: 20px;height: 20px;}
+            75%{margin-left:0px;margin-bottom:60px;opacity: 0.3;width: 15px;height: 15px;}
+            100%{margin-left:-15px;margin-bottom:80px;opacity: 0.1;width: 10px;height: 10px;}
+        }
+        p,h3{
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        h3{
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        
+        <div class="cup">
+            <div class="vapour">
+                <div class="fog anim1"></div>
+                <div class="fog anim2"></div>
+                <div class="fog anim3"></div>
+                <div class="fog anim4"></div>
+            </div>
+            <div class="topHandle">
+                <div class="top">
+                    <h3>I 💖 Chai</h3>
+                </div>
+                <div class="handle">
+                    <div class="circle"></div>
+                </div>
+            </div>
+            <div class="bottom"></div>
+            <p>Tea is just a word, but Chaaiii is emotion</p>
+            
+        </div>
+    </div>
+</body>
+</html>

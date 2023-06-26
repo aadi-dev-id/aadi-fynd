@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0px;
+            
+        }
+        .item{
+            background-color: aqua;
+            border: 1px solid red;
+            padding: 50px;
+        }
+        .container{
+            display: grid;
+            height: 100vh;
+            gap:5px;
+            background-color: blue;
+            grid-template-rows: .25fr 1fr .25fr;
+            grid:100px;
+            grid-template-areas: 
+            'navbar navbar navbar navbar'
+            'sidebar main main main'
+            'footer footer footer footer'
+        }
+        #navbar{grid-area:navbar}
+        #sidebar{grid-area:sidebar}
+        #main{grid-area:main}
+        footer{grid-area:footer}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="navbar" class="item">
+            home about us contact Info
+        </div>
+        <div id="sidebar" class="item">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam, obcaecati sed pariatur doloribus quisquam consectetur quo? Culpa, eligendi temporibus saepe sequi molestiae excepturi earum, tenetur iure libero, dolores explicabo enim!
+        </div>
+        <div id="main" class="item">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam, obcaecati sed pariatur doloribus quisquam consectetur quo? Culpa, eligendi temporibus saepe sequi molestiae excepturi earum, tenetur iure libero, dolores explicabo enim!
+        </div>
+        <footer class="item">
+            ssssssssssssssssssssssssss
+        </footer>
+    </div>
+</body>
+</html>

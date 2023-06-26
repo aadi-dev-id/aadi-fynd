@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            margin: 0px;
+        }
+
+        .nav{
+            height: 40px;
+            width: 100%;
+            background-color: black;
+            position: relative;
+        }
+
+        .nav > .nav_header{
+            display: inline;
+        }
+
+        .nav > .nav_header > .nav_title{
+            display: inline-block;
+            font-size: 20px;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .nav > .nav_sign{
+            display: none;
+        }
+      .nav > .nav_links{
+        display: inline;
+        float: right;
+        font-size: 19px;
+      }
+      .nav .nav_links > a{
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+        /* color: red; */
+        padding: 13px ;
+        padding-right: 30px;
+      }
+      
+      .nav > #nav_check{
+        display: none;
+      }
+    @media (max-width:600px){
+        .nav >.nav_sign{
+            display: inline-block;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+        }
+        .nav > .nav_sign > label{
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            /* background-color: black; */
+            padding: 14px;
+        }
+        .nav_sign #nav_check:checked ~ .nav_sign > label{
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+      .nav > .nav_sign > label > span{
+        display: block;
+        width: 25px;
+        height: 10px;
+        /* margin:10px ;
+        background-color: white; */
+        border-top: 1px solid #fff;
+
+      }
+        .nav > .nav_links{
+            position: absolute;
+            display: block;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            height: 0px;
+            top: 40px;
+            left: 0px;
+            /* overflow-y: hidden; */
+        }
+        .nav > .nav_links > a{
+            display: block;
+            width: 100%;
+            background-color: aqua;
+            color: black;
+        }
+             .nav_links{
+                /* overflow-y: auto; */
+                height: 250px;
+            }
+
+            /* label:hover{
+                background-color:yellow ;
+            } */
+            /* .nav_title:hover{
+                background-color: yellow;
+            } */
+    } 
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <input type="checkbox" id="nav_check">
+        <div class="nav_header">
+            <div class="nav_title">Food</div>
+        </div>
+        <div class="nav_sign">
+            <label for="nav_check">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+
+        <div class="nav_links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Others</a>
+            <a href="#">Login</a>
+        </div>
+    </div>
+</body>
+</html>
